@@ -1,0 +1,58 @@
+<div class="department-page">
+
+  <!-- Department List Card -->
+  <div class="table-card">
+
+    <!-- Header with Button -->
+    <div class="table-header">
+
+      <h2>Department List</h2>
+
+      <button class="add-btn" (click)="openForm()">
+        + Add Department
+      </button>
+
+    </div>
+
+
+    <!-- Add Department Form -->
+    <div class="form-section" *ngIf="showForm()">
+
+      <input
+        type="text"
+        placeholder="Enter Department Name"
+        [(ngModel)]="newDepartment"
+      />
+
+      <button (click)="addDepartment()">Add</button>
+
+      <button class="cancel-btn" (click)="closeForm()">Cancel</button>
+
+    </div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th class="col-id">ID</th>
+      <th class="col-name">Name</th>
+      <th class="col-action">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let dept of departments()">
+      <td class="col-id">{{ dept.id }}</td>
+      <td class="col-name">{{ dept.name }}</td>
+      <td class="col-action">
+        <button class="delete-btn" (click)="deleteDepartment(dept.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+</div>

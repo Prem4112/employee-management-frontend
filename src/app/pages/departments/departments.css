@@ -1,0 +1,152 @@
+/* Outer gradient container (same as Employees page) */
+.department-page {
+  padding: 40px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: calc(100vh - 80px);
+  border-radius: 20px;
+}
+
+/* Inner white card */
+.table-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.table-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  font-weight: bold;
+}
+
+/* Add Department Button (exact Employees page style) */
+.add-btn {
+  background: linear-gradient(to right, #5b6df9, #6c63ff);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* Form */
+.form-section {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.form-section input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.form-section input:focus {
+  border-color: #5b6df9;
+  outline: none;
+}
+
+/* Add button inside form */
+.form-section button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #5b6df9;
+  color: white;
+}
+
+.form-section button:hover {
+  background: #3f51b5;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background: #888 !important;
+}
+
+.cancel-btn:hover {
+  background: #666 !important;
+}
+
+/* Table */
+table {
+ 
+    width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Table Header */
+thead {
+  background: linear-gradient(to right, #5b6df9, #6c63ff);
+  color: white;
+}
+
+th {
+  padding: 16px;
+  font-size: 15px;
+}
+
+/* Table Body */
+td {
+  padding: 16px;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hover effect same as employees */
+tbody tr:hover {
+  background: #f4f6ff;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #e60000;
+  transform: scale(1.05);
+}
+/* Column alignment fix */
+.col-id {
+  width: 20%;
+  text-align: center;
+}
+
+.col-name {
+  width: 50%;
+  text-align: center;
+}
+
+.col-action {
+  width: 30%;
+  text-align: center;
+}

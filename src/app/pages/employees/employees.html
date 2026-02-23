@@ -1,0 +1,71 @@
+<div class="employee-page">
+
+  <!-- Employee List -->
+  <div class="table-card" *ngIf="!showForm()">
+
+    <div class="table-header">
+      <h2>Employee List</h2>
+      <button class="add-btn-top" (click)="showForm.set(true)">
+        + Add Employee
+      </button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Department</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let emp of employees()">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.phone }}</td>
+          <td>{{ emp.department_name }}</td>
+          <td>
+            <button class="delete-btn" (click)="deleteEmployee(emp.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Add Employee Form -->
+  <div class="form-card" *ngIf="showForm()">
+
+    <h2>Add New Employee</h2>
+
+    <div class="form-grid">
+      <input placeholder="Full Name" [(ngModel)]="newEmployee.name">
+      <input placeholder="Email Address" [(ngModel)]="newEmployee.email">
+      <input placeholder="Phone Number" [(ngModel)]="newEmployee.phone">
+    </div>
+
+    <div class="department-section">
+
+
+  <select class="form-select" [(ngModel)]="newEmployee.department_id">
+    <option value="0" disabled>Select Department</option>
+    <option *ngFor="let dept of departments()" [value]="dept.id">
+      {{ dept.name }}
+    </option>
+  </select>
+</div>
+
+    <button class="add-btn" (click)="addEmployee()">
+      Add Employee
+    </button>
+
+  </div>
+
+</div>

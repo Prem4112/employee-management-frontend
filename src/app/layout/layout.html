@@ -1,0 +1,15 @@
+<div class="layout">
+  <div class="sidebar">
+    <h2 class="logo">Admin Panel</h2>
+
+   <button routerLink="/layout/dashboard">Dashboard</button>
+<button routerLink="/layout/employees">Employees</button>
+<a routerLink="/layout/departments">Department</a>
+
+<button (click)="logout()">Logout</button>
+  </div>
+
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>

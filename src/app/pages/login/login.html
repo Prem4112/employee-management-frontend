@@ -1,0 +1,33 @@
+<div class="page-container">
+
+  <!-- Left Branding Section -->
+  <div class="left-section">
+    <div class="branding">
+      <h1>EMS</h1>
+      <h2>Employee Management System</h2>
+      <p>Manage employees, payroll, and performance efficiently in one secure platform.</p>
+    </div>
+  </div>
+
+  <!-- Right Login Section -->
+  <div class="right-section">
+    <div class="login-card">
+      <h2>Admin Login</h2>
+
+      <div class="input-group">
+        <input type="email" placeholder="Email Address" [(ngModel)]="email">
+      </div>
+
+      <div class="input-group">
+        <input type="password" placeholder="Password" [(ngModel)]="password">
+      </div>
+
+      <button class="login-btn" (click)="login()">Sign In</button>
+
+      <p class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </p>
+    </div>
+  </div>
+
+</div>
