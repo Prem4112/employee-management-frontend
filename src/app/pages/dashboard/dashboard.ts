@@ -219,5 +219,8 @@ export class Dashboard implements OnInit {
   goToEmployees() {
     this.router.navigate(['/layout/employees']);
   }
+  goToDepartment() {
+    this.router.navigate(['/layout/departments']);
+  }
 
 }
