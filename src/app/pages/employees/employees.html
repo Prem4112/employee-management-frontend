@@ -18,52 +18,105 @@
           <th>Email</th>
           <th>Phone</th>
           <th>Department</th>
+          <th>Status</th> <!-- NEW -->
           <th>Action</th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let emp of employees()">
+
           <td>{{ emp.id }}</td>
           <td>{{ emp.name }}</td>
           <td>{{ emp.email }}</td>
           <td>{{ emp.phone }}</td>
           <td>{{ emp.department_name }}</td>
+
+          <!-- STATUS BADGE -->
           <td>
-            <button class="delete-btn" (click)="deleteEmployee(emp.id)">
-              Delete
-            </button>
+            <span
+              class="status-badge"
+              [class.active]="emp.status === 'Active'"
+              [class.inactive]="emp.status === 'Inactive'"
+            >
+              {{ emp.status }}
+            </span>
           </td>
+
+          <td class="action-cell">
+
+            <button class="dots-btn" (click)="toggleMenu(emp.id)">
+              ⋯
+            </button>
+
+            <div class="action-menu" *ngIf="activeMenu() === emp.id">
+
+              <button class="edit-btn" (click)="editEmployee(emp)">
+                Edit
+              </button>
+
+              <!-- QUICK STATUS TOGGLE -->
+              <button class="status-btn" (click)="toggleStatus(emp)">
+                Set {{ emp.status === 'Active' ? 'Inactive' : 'Active' }}
+              </button>
+
+              <button class="delete-btn" (click)="deleteEmployee(emp.id)">
+                Delete
+              </button>
+
+            </div>
+
+          </td>
+
         </tr>
       </tbody>
     </table>
 
   </div>
 
+
   <!-- Add Employee Form -->
   <div class="form-card" *ngIf="showForm()">
 
-    <h2>Add New Employee</h2>
+    <h2>
+      {{ editingEmployeeId() ? 'Edit Employee' : 'Add New Employee' }}
+    </h2>
 
     <div class="form-grid">
+
       <input placeholder="Full Name" [(ngModel)]="newEmployee.name">
+
       <input placeholder="Email Address" [(ngModel)]="newEmployee.email">
+
       <input placeholder="Phone Number" [(ngModel)]="newEmployee.phone">
+
+      <!-- Department -->
+      <select class="form-select" [(ngModel)]="newEmployee.department_id">
+
+        <option value="0" disabled>Select Department</option>
+
+        <option *ngFor="let dept of departments()" [value]="dept.id">
+          {{ dept.name }}
+        </option>
+
+      </select>
+
+      <!-- STATUS SELECT -->
+      <select class="form-select" [(ngModel)]="newEmployee.status">
+        
+
+        <option value="Active">Active</option>
+
+        <option value="Inactive">Inactive</option>
+
+      </select>
+
     </div>
 
-    <div class="department-section">
-
-
-  <select class="form-select" [(ngModel)]="newEmployee.department_id">
-    <option value="0" disabled>Select Department</option>
-    <option *ngFor="let dept of departments()" [value]="dept.id">
-      {{ dept.name }}
-    </option>
-  </select>
-</div>
-
     <button class="add-btn" (click)="addEmployee()">
-      Add Employee
+
+      {{ editingEmployeeId() ? 'Update Employee' : 'Add Employee' }}
+
     </button>
 
   </div>

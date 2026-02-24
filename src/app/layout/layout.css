@@ -1,77 +1,114 @@
+/* MAIN LAYOUT */
 .layout {
   display: flex;
   height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
 }
 
+/* SIDEBAR */
 .sidebar {
   width: 240px;
-  background: #1e293b;
-  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #e2e8f0;
   padding: 20px;
   display: flex;
   flex-direction: column;
+
+  /* premium shadow */
+  box-shadow: 4px 0 15px rgba(0,0,0,0.15);
 }
 
+/* LOGO / ADMIN PANEL TEXT */
 .logo {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
   text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 12px;
 }
 
-.sidebar a {
-  color: #cbd5e1;
-  text-decoration: none;
-  padding: 12px;
+/* Professional underline */
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 3px;
+}
+
+/* SIDEBAR MENU LINKS */
+.sidebar a,
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  margin-bottom: 8px;
+
   border-radius: 8px;
-  margin-bottom: 10px;
-  transition: 0.3s;
+  border: none;
+
+  background: transparent;
+  color: #e0e7ff;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 15px;
 }
 
-.sidebar a:hover {
-  background: #334155;
+/* HOVER EFFECT */
+.sidebar a:hover,
+.sidebar button:hover {
+  background: rgba(15, 23, 42, 0.6);
+  color: #ffffff;
+  transform: translateX(5px);
 }
 
+/* ACTIVE MENU */
 .active {
-  background: #3b82f6;
-  color: white !important;
+  background: #2563eb;
+  color: #ffffff !important;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
 }
 
+/* MAIN CONTENT AREA */
 .main {
   flex: 1;
-  background: #f1f5f9;
+  background: #f4f6f9;
   padding: 30px;
   overflow-y: auto;
 }
-.admin-container {
-  display: flex;
-  height: 100vh;
+
+/* Optional section titles */
+.sidebar-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-.sidebar {
-  width: 220px;
-  background: #1e293b;
-  color: white;
-  padding: 20px;
+/* Scrollbar styling */
+.main::-webkit-scrollbar {
+  width: 8px;
 }
 
-.sidebar a,
-.sidebar button {
-  display: block;
-  margin: 12px 0;
-  padding: 10px;
-  text-align: left;
-
-  border: 1px solid #ffffff;   /* ✅ Border added */
-  border-radius: 6px;          /* Rounded corners */
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease;
+.main::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
 }
 
-/* Hover effect */
-.sidebar a:hover,
-.sidebar button:hover {
-  background-color: #334155;
-  border-color: #38bdf8;
+.main::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }

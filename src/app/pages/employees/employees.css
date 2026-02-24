@@ -1,25 +1,44 @@
+/* PAGE BACKGROUND - Professional */
 .employee-page {
   min-height: 100vh;
   padding: 40px;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: #f4f6f9;
   box-sizing: border-box;
+  color: #2c3e50;
 }
 
 /* FORM CARD */
 .form-card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  margin-bottom: 40px;
-  max-width: 900px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+  border: 1px solid #e9ecef;
 }
 
-.form-card h2 {
+/* TABLE CARD */
+.table-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #e9ecef;
+  overflow-x: auto;
+}
+
+/* Headings */
+.form-card h2,
+.table-card h2 {
   margin-bottom: 20px;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 /* Form Grid */
@@ -30,153 +49,44 @@
   margin-bottom: 20px;
 }
 
-.form-grid input {
-  padding: 12px;
-  border-radius: 10px;
-  border: 2px solid #ddd;
+/* Inputs */
+.form-grid input,
+.form-select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
   outline: none;
-  transition: 0.3s;
+  transition: 0.2s;
+  font-size: 14px;
+  background: #fff;
 }
 
-.form-grid input:focus {
+/* Input Focus */
+.form-grid input:focus,
+.form-select:focus {
   border-color: #667eea;
-  box-shadow: 0 0 10px rgba(102,126,234,0.3);
+  box-shadow: 0 0 4px rgba(102, 126, 234, 0.2);
 }
 
 /* Add Button */
 .add-btn {
-  padding: 12px 25px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
   border: none;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
+  margin-top: 10px;
 }
 
 .add-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(102,126,234,0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* TABLE CARD */
-.table-card,
-.form-card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  max-width: 1200px; /* increased width from 900px → 1200px */
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  overflow-x: auto; /* allows horizontal scroll if needed */
-}
-
-.table-card h2 {
-  margin-bottom: 20px;
-}
-
-/* Table Styling */
-table {
-  width: 100%;          /* table fills the card */
-  min-width: 500px;     /* table can expand beyond default column sizes */
-  border-collapse: collapse;
-  table-layout: auto;   /* columns adjust based on content */
-}
-
-
-thead {
-  background: #667eea;
-  color: white;
-}
-
-th, td {
-  padding: 12px;
-  text-align: center;
-  word-wrap: break-word;
-}
-
-td button {
-  white-space: nowrap; /* keep delete button inside cell */
-}
-
-tbody tr {
-  border-bottom: 1px solid #eee;
-  transition: 0.2s;
-}
-
-tbody tr:hover {
-  background: #f4f6ff;
-}
-
-/* Delete Button */
-.delete-btn {
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: none;
-  background: #ff4d4d;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.delete-btn:hover {
-  background: #cc0000;
-}
-
-/* Department Section (Form) */
-/* Department Section */
-.department-section {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-   box-sizing: border-box;
-}
-
-
-/* Styled Select */
-.form-select {
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-  outline: none;
-  transition: 0.3s ease;
-  background-color: #fff;
-  cursor: pointer;
-   box-sizing: border-box;
-}
-
-/* Focus effect like other inputs */
-.form-select:focus {
-  border-color: #5b6df9;
-  box-shadow: 0 0 6px rgba(91, 109, 249, 0.4);
-}
-
-/* Remove ugly default arrow and add modern arrow */
-.form-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  background-image: url("data:image/svg+xml;utf8,<svg fill='%235b6df9' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 16px;
-   box-sizing: border-box;
-}
-
-/* Table Header with Add Button */
-.table-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
+/* Top Add Button */
 .add-btn-top {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
@@ -187,10 +97,176 @@ tbody tr:hover {
 }
 
 .add-btn-top:hover {
-  background-color: #667eea;
+  opacity: 0.9;
 }
 
+/* Table Header */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
 
+/* Table Head */
+thead {
+  background: #f1f3f5;
+}
 
+th {
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+}
 
+/* Table Body */
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Row Hover */
+tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* ========================= */
+/* 3 DOTS ACTION MENU STYLE */
+/* ========================= */
+
+.action-cell {
+  position: relative;
+}
+
+/* Horizontal 3 dots button */
+.dots-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.dots-btn:hover {
+  background: #f1f3f5;
+}
+
+/* Dropdown menu */
+.action-menu {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Menu buttons */
+.action-menu button {
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  transition: 0.2s;
+}
+
+/* Edit Button */
+.edit-btn {
+  color: #2563eb;
+}
+
+.edit-btn:hover {
+  background: #eef2ff;
+}
+
+/* Delete Button */
+.delete-btn {
+  color: #dc3545;
+}
+
+.delete-btn:hover {
+  background: #fdeaea;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Select Arrow Custom */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23667eea' height='20' viewBox='0 0 20 20' width='20'><path d='M5 7l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+/* STATUS BADGE */
+
+.status-badge {
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+}
+
+.status-badge.active {
+
+  background: #dcfce7;
+
+  color: #166534;
+
+}
+
+.status-badge.inactive {
+
+  background: #fee2e2;
+
+  color: #991b1b;
+
+}
+
+/* STATUS BUTTON */
+
+.status-btn {
+
+  color: #f59e0b;
+
+}
+
+.status-btn:hover {
+
+  background: #fef3c7;
+
+}

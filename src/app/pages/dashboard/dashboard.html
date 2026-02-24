@@ -7,21 +7,60 @@
 
   <div class="dashboard-cards">
 
-    <div class="card">
-      <h3>Total Employees</h3>
-      <p class="count">{{ totalEmployees() }}</p>
+    <!-- Total Employees -->
+    <div class="card blue" (click)="goToEmployees()">
+      <div class="card-icon">👥</div>
+      <div class="card-info">
+        <h3>Total Employees</h3>
+        <p class="count">{{ totalEmployees() }}</p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Active Employees</h3>
-      <p class="count">{{ totalEmployees() }}</p>
+    <!-- Active Employees -->
+    <div class="card green">
+      <div class="card-icon">✅</div>
+      <div class="card-info">
+        <h3>Active Employees</h3>
+        <p class="count">{{ activeEmployees() }}</p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Departments</h3>
-      <p class="count">5</p>
+    <!-- Departments -->
+    <div class="card purple">
+      <div class="card-icon">🏢</div>
+      <div class="card-info">
+        <h3>Departments</h3>
+        <p class="count">{{ totalDepartments() }}</p>
+      </div>
     </div>
 
   </div>
+
+  <!-- ✅ Chart Section -->
+  <div class="chart-section">
+
+    <div class="chart-card">
+      <h3>Employees Per Department</h3>
+
+      <canvas id="departmentChart"></canvas>
+
+    </div>
+
+  </div>
+  <div class="analytics-grid">
+
+  <!-- Doughnut Chart -->
+  <div class="chart-card">
+    <h3>Employee Status</h3>
+    <canvas id="statusChart"></canvas>
+  </div>
+
+  <!-- Line Chart -->
+  <div class="chart-card">
+    <h3>Employee Growth</h3>
+    <canvas id="growthChart"></canvas>
+  </div>
+
+</div>
 
 </div>
